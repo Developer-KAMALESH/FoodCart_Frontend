@@ -50,6 +50,15 @@ nav ul li::after {
   transition: width 0.3s ease;
 }
 
+.cart-badge{
+  background:#000;
+  color:white;
+  padding:2px 8px;
+  border-radius:10px;
+  font-size:12px;
+  margin-left:5px;
+}
+
 nav ul li:hover::after {
   width: 100%;
 }

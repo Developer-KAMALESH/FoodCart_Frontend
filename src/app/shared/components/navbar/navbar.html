@@ -4,7 +4,9 @@
   <ul>
     <li routerLink="/">Home</li>
     <li routerLink="/menu">Menu</li>
-    <li routerLink="/cart">Cart</li>
+    <li routerLink="/cart" class="cart-link">
+  Cart <span class="cart-badge">{{cartCount}}</span>
+</li>
     <li routerLink="/login">Login</li>
   </ul>
 </nav>

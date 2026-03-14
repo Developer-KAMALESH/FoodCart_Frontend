@@ -1,0 +1,58 @@
+<section class="checkout">
+
+  <h1>Checkout</h1>
+
+  <div class="checkout-container">
+
+    <!-- LEFT SIDE: FORM -->
+    <div class="checkout-form">
+
+      <h2>Customer Details</h2>
+
+      <input type="text" placeholder="Full Name">
+      <input type="tel" placeholder="Phone Number">
+      <input type="email" placeholder="Email">
+
+      <h2>Delivery Address</h2>
+
+      <textarea placeholder="Enter your address"></textarea>
+      <input type="text" placeholder="City">
+      <input type="text" placeholder="Pincode">
+
+      <h2>Payment Method</h2>
+
+      <div class="payment-options">
+        <label><input type="radio" name="payment"> Cash on Delivery</label>
+        <label><input type="radio" name="payment"> UPI</label>
+        <label><input type="radio" name="payment"> Card</label>
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDE: ORDER SUMMARY -->
+    <div class="order-summary">
+
+      <h2>Order Summary</h2>
+
+      <div class="summary-item" *ngFor="let item of cartItems">
+        <span>{{item.name}} x {{item.quantity}}</span>
+        <span>₹{{item.price * item.quantity}}</span>
+      </div>
+
+      <hr>
+
+      <div class="summary-total">
+        <strong>Total</strong>
+        <strong>₹{{total}}</strong>
+      </div>
+
+      <button class="place-order-btn"
+              (click)="placeOrder()">
+        Place Order
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
