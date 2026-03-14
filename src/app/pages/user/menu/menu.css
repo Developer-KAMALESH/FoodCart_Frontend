@@ -38,6 +38,12 @@
   margin-bottom: 40px;
   color: #000;
 }
+.menu-controls {
+  position: sticky;
+  top: 0;
+  background: rgb(240, 240, 240);
+  padding: 15px;
+}
 
 /* MENU GRID */
 .menu-grid {

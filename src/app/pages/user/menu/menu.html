@@ -1,8 +1,7 @@
 <section class="menu">
 
-<h1>Our Menu</h1>
-
-<!-- SEARCH + FILTER -->
+  <h1>Our Menu</h1>
+  <!-- SEARCH + FILTER -->
 <div class="menu-controls">
 
   <input
@@ -19,24 +18,37 @@
 
 </div>
 <br>
-<div class="menu-grid">
 
-  <div class="food-card" *ngFor="let food of paginatedFoods">
+  <div class="menu-grid">
 
-    <img [src]="food.image">
+    <div class="food-card" *ngFor="let food of paginatedFoods">
 
-    <h3>{{food.name}}</h3>
+      <img [src]="food.image">
 
-    <p>{{food.description}}</p>
+      <h3>{{food.name}}</h3>
 
-    <div class="food-footer">
+      <p>{{food.description}}</p>
 
-      <span class="price">₹{{food.price}}</span>
+      <div class="food-footer">
 
-      <button>Add to Cart</button>
+        <span class="price">₹{{food.price}}</span>
+
+        <button (click)="addToCart(food)">Add to Cart</button>
+
+      </div>
 
     </div>
 
   </div>
 
-</div>
+  <div class="pagination">
+
+    <button (click)="prevPage()">Previous</button>
+
+    <span>Page {{currentPage}}</span>
+
+    <button (click)="nextPage()">Next</button>
+
+  </div>
+
+</section>

@@ -1,0 +1,107 @@
+.cart{
+  padding:60px 40px;
+  max-width:900px;
+  margin:auto;
+}
+
+.cart h1{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+/* CART ITEM */
+
+.cart-item{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  padding:20px;
+  border-bottom:1px solid #eee;
+}
+
+.cart-item img{
+  width:80px;
+  height:80px;
+  object-fit:cover;
+  border-radius:8px;
+}
+
+.cart-info{
+  flex:1;
+}
+
+.cart-info h3{
+  margin:0;
+}
+
+.cart-info p{
+  color:#ff7a00;
+  font-weight:bold;
+}
+
+/* QUANTITY */
+
+.cart-qty{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.cart-qty button{
+  background:#000;
+  color:white;
+  border:none;
+  width:30px;
+  height:30px;
+  border-radius:4px;
+  cursor:pointer;
+}
+
+.cart-qty button:hover{
+  background:#ff7a00;
+}
+
+/* SUBTOTAL */
+
+.cart-subtotal{
+  font-weight:bold;
+  width:80px;
+  text-align:right;
+}
+
+/* REMOVE BUTTON */
+
+.remove-btn{
+  background:none;
+  border:none;
+  color:red;
+  cursor:pointer;
+}
+
+/* TOTAL SECTION */
+
+.cart-total{
+  margin-top:40px;
+  text-align:right;
+}
+
+.checkout-btn{
+  background:#ff7a00;
+  border:none;
+  color:white;
+  padding:12px 25px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.checkout-btn:hover{
+  background:#ff8f1f;
+}
+
+/* EMPTY CART */
+
+.empty-cart{
+  text-align:center;
+  font-size:18px;
+  color:#777;
+}
