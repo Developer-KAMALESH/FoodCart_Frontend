@@ -1,0 +1,129 @@
+<!-- src/app/pages/cart/cart.html -->
+
+<!-- ── Order Success Overlay ───────────────────────────── -->
+<div class="success-overlay" *ngIf="orderPlaced">
+  <div class="success-box">
+    <div class="success-icon">✅</div>
+    <h2>Order Placed!</h2>
+    <p>Your order was placed successfully.<br>Redirecting to menu…</p>
+  </div>
+</div>
+
+<!-- ── Page ────────────────────────────────────────────── -->
+<section class="cart-page">
+  <h1>Your Cart</h1>
+
+  <!-- Empty state -->
+  <div class="empty-cart" *ngIf="cartItems.length === 0">
+    <p class="empty-icon">🛒</p>
+    <h2>Your cart is empty!</h2>
+    <p>Add some delicious food from the menu.</p>
+    <button class="btn-orange" (click)="goToMenu()">Browse Menu</button>
+  </div>
+
+  <!-- Cart layout -->
+  <div class="cart-layout" *ngIf="cartItems.length > 0">
+
+    <!-- ── Left: Item list ───────────────────────────────── -->
+    <div class="cart-items">
+
+      <div class="cart-card" *ngFor="let item of cartItems">
+
+        <img [src]="item.image" [alt]="item.name" />
+
+        <div class="card-info">
+          <h3>{{ item.name }}</h3>
+          <p>{{ item.description }}</p>
+          <span class="price">₹{{ item.price }}</span>
+        </div>
+
+        <div class="card-controls">
+          <!-- qty stepper -->
+          <div class="qty-stepper">
+            <button (click)="decrement(item.id)">−</button>
+            <span>{{ item.quantity }}</span>
+            <button (click)="increment(item.id)">+</button>
+          </div>
+          <!-- line total -->
+          <span class="line-total">₹{{ item.price * item.quantity }}</span>
+          <!-- remove -->
+          <button class="remove-btn" (click)="remove(item.id)" title="Remove">🗑</button>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ── Right: Billing summary ────────────────────────── -->
+    <div class="billing-panel">
+
+      <h2>Order Summary</h2>
+
+      <!-- per-item rows -->
+      <div class="bill-row" *ngFor="let item of cartItems">
+        <span>{{ item.name }} × {{ item.quantity }}</span>
+        <span>₹{{ item.price * item.quantity }}</span>
+      </div>
+
+      <hr />
+
+      <div class="bill-row">
+        <span>Subtotal</span>
+        <span>₹{{ subtotal }}</span>
+      </div>
+
+      <div class="bill-row">
+        <span>Delivery</span>
+        <span *ngIf="!isFreeDelivery">₹{{ deliveryCharge }}</span>
+        <span *ngIf="isFreeDelivery" class="free-tag">FREE 🎉</span>
+      </div>
+
+      <div class="bill-row">
+        <span>GST (5%)</span>
+        <span>₹{{ gst }}</span>
+      </div>
+
+      <div class="bill-row discount-row" *ngIf="discount > 0">
+        <span>Discount ({{ appliedCoupon }})</span>
+        <span class="discount-amount">− ₹{{ discount }}</span>
+      </div>
+
+      <hr />
+
+      <div class="bill-row total-row">
+        <span>Total</span>
+        <span>₹{{ total }}</span>
+      </div>
+
+      <!-- free delivery nudge -->
+      <p class="nudge" *ngIf="!isFreeDelivery">
+        Add ₹{{ 500 - subtotal }} more for FREE delivery!
+      </p>
+
+      <!-- Coupon -->
+      <div class="coupon-box" *ngIf="!appliedCoupon">
+        <input
+          type="text"
+          placeholder="Enter coupon code"
+          [(ngModel)]="couponInput"
+        />
+        <button (click)="applyCoupon()">Apply</button>
+      </div>
+
+      <div class="coupon-applied" *ngIf="appliedCoupon">
+        <span>🎟 {{ appliedCoupon }} applied</span>
+        <button class="remove-coupon" (click)="removeCoupon()">✕</button>
+      </div>
+
+      <!-- CTA buttons -->
+      <button class="checkout-btn" (click)="checkout()">
+        Proceed to Checkout &nbsp;·&nbsp; ₹{{ total }}
+      </button>
+
+      <button class="back-btn" (click)="goToMenu()">
+        ← Continue Shopping
+      </button>
+
+    </div>
+  </div>
+</section>
