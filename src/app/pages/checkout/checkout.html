@@ -4,30 +4,82 @@
 
   <div class="checkout-container">
 
-    <!-- LEFT SIDE: FORM -->
+    <!-- LEFT SIDE : FORM -->
     <div class="checkout-form">
 
-      <h2>Customer Details</h2>
+      <h2>Order Type</h2>
 
-      <input type="text" placeholder="Full Name">
-      <input type="tel" placeholder="Phone Number">
-      <input type="email" placeholder="Email">
+      <div class="order-type">
 
-      <h2>Delivery Address</h2>
+        <label>
+          <input type="radio"
+                 name="orderType"
+                 value="DINE_IN"
+                 [(ngModel)]="orderType">
+          Dine-In
+        </label>
 
-      <textarea placeholder="Enter your address"></textarea>
-      <input type="text" placeholder="City">
-      <input type="text" placeholder="Pincode">
+        <label>
+          <input type="radio"
+                 name="orderType"
+                 value="TAKEAWAY"
+                 [(ngModel)]="orderType">
+          Takeaway
+        </label>
 
-      <h2>Payment Method</h2>
+        <label>
+          <input type="radio"
+                 name="orderType"
+                 value="DELIVERY"
+                 [(ngModel)]="orderType">
+          Delivery
+        </label>
 
-      <div class="payment-options">
-        <label><input type="radio" name="payment"> Cash on Delivery</label>
-        <label><input type="radio" name="payment"> UPI</label>
-        <label><input type="radio" name="payment"> Card</label>
+      </div>
+
+      <!-- DINE IN -->
+      <div *ngIf="orderType === 'DINE_IN'" class="dynamic-section">
+
+        <h2>Dine-In Details</h2>
+
+        <input type="text"
+               placeholder="Enter Table Number"
+               [(ngModel)]="tableNumber">
+
+      </div>
+
+
+      <!-- TAKEAWAY -->
+      <div *ngIf="orderType === 'TAKEAWAY'" class="dynamic-section">
+
+        <h2>Pickup Details</h2>
+
+        <input type="time"
+               [(ngModel)]="pickupTime">
+
+      </div>
+
+
+      <!-- DELIVERY -->
+      <div *ngIf="orderType === 'DELIVERY'" class="dynamic-section">
+
+        <h2>Delivery Address</h2>
+
+        <textarea placeholder="Enter your address"
+                  [(ngModel)]="address"></textarea>
+
+        <input type="text"
+               placeholder="City"
+               [(ngModel)]="city">
+
+        <input type="text"
+               placeholder="Pincode"
+               [(ngModel)]="pincode">
+
       </div>
 
     </div>
+
 
     <!-- RIGHT SIDE: ORDER SUMMARY -->
     <div class="order-summary">
