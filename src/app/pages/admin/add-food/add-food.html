@@ -1,0 +1,42 @@
+<section class="add-food">
+
+  <h1>Add Food Item</h1>
+
+  <div class="form-card">
+
+    <input
+      type="text"
+      placeholder="Food Name"
+      [(ngModel)]="food.name"
+    >
+
+    <input
+      type="text"
+      placeholder="Category"
+      [(ngModel)]="food.category"
+    >
+
+    <input
+      type="number"
+      placeholder="Price"
+      [(ngModel)]="food.price"
+    >
+
+    <textarea
+      placeholder="Description"
+      [(ngModel)]="food.description"
+    ></textarea>
+
+    <input
+      type="text"
+      placeholder="Image URL"
+      [(ngModel)]="food.image"
+    >
+
+    <button (click)="addFood()">
+      Add Food Item
+    </button>
+
+  </div>
+
+</section>

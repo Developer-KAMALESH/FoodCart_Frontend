@@ -1,0 +1,48 @@
+.admin-menu h1{
+  margin-bottom:20px;
+}
+
+/* ADD BUTTON */
+
+.admin-menu button{
+  background:#ff7a00;
+  border:none;
+  color:white;
+  padding:10px 15px;
+  border-radius:5px;
+  cursor:pointer;
+  margin-bottom:20px;
+}
+
+.admin-menu button:hover{
+  background:#ff8f1f;
+}
+
+/* TABLE */
+
+.admin-menu table{
+  width:100%;
+  border-collapse:collapse;
+  background:white;
+  border-radius:8px;
+  overflow:hidden;
+}
+
+.admin-menu th{
+  background:#000;
+  color:white;
+  padding:12px;
+  text-align:left;
+}
+
+.admin-menu td{
+  padding:12px;
+  border-bottom:1px solid #eee;
+}
+
+/* ACTION BUTTONS */
+
+.admin-menu td button{
+  margin-right:8px;
+  padding:6px 10px;
+}

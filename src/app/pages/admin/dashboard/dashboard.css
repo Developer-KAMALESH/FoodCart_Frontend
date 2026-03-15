@@ -1,0 +1,30 @@
+.admin-dashboard h1{
+  margin-bottom:30px;
+}
+
+/* STATS GRID */
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+}
+
+/* CARD */
+
+.stat-card{
+  background:white;
+  padding:25px;
+  border-radius:8px;
+  text-align:center;
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+
+.stat-card h2{
+  font-size:32px;
+  color:#ff7a00;
+}
+
+.stat-card p{
+  color:#666;
+}

@@ -1,0 +1,96 @@
+<section class="kanban">
+
+<h1>Order Management</h1>
+
+<div class="kanban-board">
+
+  <!-- PENDING -->
+  <div class="kanban-column">
+
+    <h2>Pending</h2>
+
+    <div class="order-card"
+         *ngFor="let order of pendingOrders">
+
+      <h3>Order #{{order.id}}</h3>
+
+      <p>{{order.items}}</p>
+
+      <span>₹{{order.total}}</span>
+
+      <button (click)="moveToPreparing(order)">
+        Start Preparing
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- PREPARING -->
+  <div class="kanban-column">
+
+    <h2>Preparing</h2>
+
+    <div class="order-card"
+         *ngFor="let order of preparingOrders">
+
+      <h3>Order #{{order.id}}</h3>
+
+      <p>{{order.items}}</p>
+
+      <span>₹{{order.total}}</span>
+
+      <button (click)="moveToReady(order)">
+        Ready
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- READY -->
+  <div class="kanban-column">
+
+    <h2>Ready</h2>
+
+    <div class="order-card"
+         *ngFor="let order of readyOrders">
+
+      <h3>Order #{{order.id}}</h3>
+
+      <p>{{order.items}}</p>
+
+      <span>₹{{order.total}}</span>
+
+      <button (click)="moveToDone(order)">
+        Complete
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- COMPLETED -->
+  <div class="kanban-column">
+
+    <h2>Completed</h2>
+
+    <div class="order-card"
+         *ngFor="let order of completedOrders">
+
+      <h3>Order #{{order.id}}</h3>
+
+      <p>{{order.items}}</p>
+
+      <span>₹{{order.total}}</span>
+
+    </div>
+
+  </div>
+
+</div>
+
+</section>

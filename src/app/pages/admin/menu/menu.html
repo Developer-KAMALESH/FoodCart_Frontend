@@ -1,0 +1,31 @@
+<section class="admin-menu">
+
+<h1>Menu Management</h1>
+
+<button routerLink="/admin/add-food">
+Add Food Item
+</button>
+
+<table>
+
+<tr>
+<th>Name</th>
+<th>Price</th>
+<th>Actions</th>
+</tr>
+
+<tr *ngFor="let food of foods">
+
+<td>{{food.name}}</td>
+<td>₹{{food.price}}</td>
+
+<td>
+<button>Edit</button>
+<button>Delete</button>
+</td>
+
+</tr>
+
+</table>
+
+</section>

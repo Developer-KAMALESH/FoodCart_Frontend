@@ -1,0 +1,43 @@
+.kanban{
+  padding:40px;
+}
+
+.kanban h1{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.kanban-board{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.kanban-column{
+  background:#f9f9f9;
+  padding:15px;
+  border-radius:8px;
+}
+
+.kanban-column h2{
+  text-align:center;
+  margin-bottom:15px;
+}
+
+.order-card{
+  background:white;
+  padding:15px;
+  border-radius:6px;
+  margin-bottom:15px;
+  box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+.order-card button{
+  margin-top:10px;
+  background:#ff7a00;
+  border:none;
+  color:white;
+  padding:6px 10px;
+  border-radius:4px;
+  cursor:pointer;
+}
